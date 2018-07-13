@@ -1,0 +1,19 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <h1>Hello!</h1>
+        <div id="status"></div>
+        <script>
+            var ws = new WebSocket("ws://localhost:8080/websocket");
+            ws.onopen = function() {
+                console.log("Socket opened");
+                document.getElementById("status").innerText = "Socket opened";
+            };
+            ws.onclose = function() {
+                console.log("Socket closed");
+                document.getElementById("status").innerText = "Socket closed";
+            };
+        </script>
+    </body>
+</html>
